@@ -3,10 +3,13 @@
 Reimplementation of TwilightBoxart API, as the original one is down and I can't find the source anywhere.
 
 Currently working:
-- DS/DSi boxarts with resizing
+- Image resizing
+- DS/DSi boxarts
 
 Currently not working:
-- Literally everything else
+- SHA1 matching (No-Intro DB is not implemented)
+- Borders (ignored for now)
+- Any console other than DS/DSi (will return 404)
 
 To run:
 1. Rebuild [TwilightBoxart](https://github.com/KirovAir/TwilightBoxart) with `ApiUrl` in `TwilightBoxart/BoxartConfig.cs` to a URL of your choice
