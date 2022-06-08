@@ -3,7 +3,7 @@
 Reimplementation of TwilightBoxart API, as the original one is down and I can't find the source anywhere.
 
 Currently working:
-- Literally nothing (Image seems to correctly convert but returns 0KB of image)
+- DS/DSi boxarts with resizing
 
 Currently not working:
 - Literally everything else

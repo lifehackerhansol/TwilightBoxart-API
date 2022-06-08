@@ -22,6 +22,7 @@ from io import BytesIO
 
 import requests
 from fastapi import FastAPI, HTTPException, Form, Response
+from fastapi.responses import StreamingResponse
 # needed to work around some weird shit going on in FastAPI.Form()
 from pydantic.fields import Undefined
 from PIL import Image
@@ -78,6 +79,6 @@ async def get_boxart(Filename: str = Form(default=Undefined),
             img = Image.open(response)
             img.resize((int(BoxartWidth), int(BoxartHeight)))
             img.save(response, format='PNG')
-
-        return Response(content=response.read(), media_type="image/png")
+        response.seek(0)
+        return StreamingResponse(content=response, media_type="image/png")
     raise HTTPException(status_code=404)
